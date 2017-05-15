@@ -22,7 +22,7 @@ $(function() {
                 .append($columnCardList);
             return $column;     //ZWRACAMY STWORZONY ELEMENT
         }
-    };
+    }
     Column.prototype = {
         addCard: function(card){
             this.$element.children("ul").append(card.$element);
@@ -47,7 +47,7 @@ $(function() {
                 .append($cardDescription);
             return $card;                   //ZWRACAMY STWORZONY ELEMENT
         }
-    };
+    }
     Card.prototype = {
 	    removeCard: function() {
 		    this.$element.remove();
@@ -71,7 +71,7 @@ $(function() {
             connectWith: '.column-card-list',
             placeholder: 'card-placeholder'
         }).disableSelection();
-    };
+    }
     function randomString() {
         var chars = '0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ';
         var str = '';

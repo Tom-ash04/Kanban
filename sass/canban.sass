@@ -1,0 +1,64 @@
+*
+    margin: 0
+    padding: 0
+    // border: 1px solid black
+#board
+    width: 80vw
+    margin: 0 auto
+    padding: 20px
+    text-align: center
+    background: rgb(109, 227, 90)
+    .create-column
+        margin: 20px
+        padding: 10px 20px
+        border: none
+        background: rgb(0, 143, 220)
+        color: white
+        border-radius: 5px
+    .column-container
+        display: flex
+        justify-content: space-between
+        .column
+            flex: 1
+            margin-right: 50px
+            background: rgba(255, 255, 255, .5)
+            border-radius: 5px
+            .add-card
+                margin: 20px
+                padding: 10px 20px
+                border: none
+                background: rgb(0, 143, 220)
+                color: #fff
+                border-radius: 5px
+            ul
+                list-style-type: none
+                min-height: 50px
+                height: 100%
+                .card
+                    margin: 5px
+                    border-radius: 5px
+                    background: #fff
+                    .btn-delete
+                        margin: 10px
+                    .card-description
+                        margin: 10px
+                    &:before, &:after
+                        content: " "
+                        display: table
+                        clear: both
+            &:last-child
+                margin-right: 0
+            &:before, &:after
+                content: " "
+                display: table
+                clear: both
+.card-placeholder
+    height: 50px
+.btn-delete
+    margin: 20px
+    padding: 10px
+    border: none
+    background: rgb(255, 46, 41)
+    color: #fff
+    border-radius: 5px
+    float: right
