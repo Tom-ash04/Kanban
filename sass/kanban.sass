@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+*
+    margin: 0
+    padding: 0
+    font-family: 'Open Sans', sans-serif
+    // border: 1px solid black
+body
+    background: url("https://static.pexels.com/photos/374631/pexels-photo-374631.jpeg") 0/cover fixed
+    section
+        margin: 50px 0
+        .board
+            width: 80vw
+            margin: 0 auto
+            padding: 20px
+            text-align: center
+            background: rgba(255, 255, 255, .7)
+            border-radius: 10px
+            h1
+                font-size: 40px
+                text-shadow: 0px 2px 5px black
+            .create-column
+                margin: 20px
+                padding: 10px 20px
+                border: none
+                background: rgb(0, 143, 220)
+                color: white
+                border-radius: 5px
+                @extend .glitter
+            .column-container
+                display: flex
+                justify-content: space-between
+                .column
+                    position: relative
+                    flex: 1
+                    margin-right: 50px
+                    background: rgba(255, 255, 255, .6)
+                    border-radius: 5px
+                    box-shadow: 0 2px 10px black
+                    h2
+                        margin-top: 20px
+                    .add-card
+                        margin: 20px
+                        padding: 10px 20px
+                        border: none
+                        background: rgb(0, 143, 220)
+                        color: #fff
+                        border-radius: 5px
+                        @extend .glitter
+                    ul
+                        list-style-type: none
+                        min-height: 50px
+                        height: 70%
+                        .card
+                            margin: 5px
+                            border-radius: 5px
+                            background: #fff
+                            box-shadow: 0 0 10px black
+                            .btn-delete
+                                margin: 10px
+                            .card-description
+                                margin: 10px
+                            &:hover
+                                background: rgba(238, 238, 238, 1)
+                            &:before, &:after
+                                content: " "
+                                display: table
+                                clear: both
+                    &:last-child
+                        margin-right: 0
+                    &:before, &:after
+                        content: " "
+                        display: table
+                        clear: both
+
+    .btn-delete
+        margin: 20px
+        border: none
+        background: transparent
+        color: gray
+        float: right
+        font-size: 20px
+        transition: .5s ease
+        cursor: pointer
+        &:focus
+            outline: none
+        &:hover
+            transform: scale(1.2) rotate(360deg)
+            color: red
+.column > .btn-delete
+    position: absolute
+    top: 0
+    right: 0
+
+.glitter
+    background-size: 450%
+    background-position: 100% 0
+    background-image: linear-gradient(135deg, #3498db 50%, white 50%, white 55%, #3498db 55%)
+    transition: .5s ease
+    cursor: pointer
+    &:hover
+        background-position: 0 100%
+        transform: scale(1.2)
