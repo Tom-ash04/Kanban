@@ -6,12 +6,12 @@ $(function() {
         this.name = name;
         this.$element = createColumn();
         function createColumn(){
-            var $column = $("<div>").addClass("column");    //CREATING ELEMENTS OF COLUMN
+            var $column = $("<div>").addClass("column");
             var $columnTitle = $("<h2>").addClass("column-title").text(self.name);
             var $columnCardList = $("<ul>").addClass("column-card-list");
             var $columnDelete = $("<button>").addClass("btn-delete").text("X");
             var $columnAddCard = $("<button>").addClass("add-card").text("Add card");
-            $columnDelete.click(function() {        //ADDING EVENTS
+            $columnDelete.click(function() {
                 self.removeColumn();
             });
             $columnAddCard.click(function() {
@@ -19,7 +19,7 @@ $(function() {
                 if (name){
                     self.addCard(new Card(name));}
             });
-            $column.append($columnTitle)        //ADDING ELEMENTS TO COLUMN
+            $column.append($columnTitle)
                 .append($columnDelete)
                 .append($columnAddCard)
                 .append($columnCardList);
@@ -43,13 +43,13 @@ $(function() {
         this.description = description;
         this.$element = createCard();
         function createCard() {
-            var $card = $("<li>").addClass("card");     //CREATING ELEMENTS OF CARD
+            var $card = $("<li>").addClass("card");
             var $cardDescription = $("<p>").addClass("card-description").text(self.description);
             var $cardDelete = $("<button>").addClass("btn-delete").text("x");
-            $cardDelete.click(function(){       //ADDING EVENTS
+            $cardDelete.click(function(){
                 self.removeCard();
             });
-            $card.append($cardDelete)       //ADDING ELEMENTS TO CARD
+            $card.append($cardDelete)
                 .append($cardDescription);
             return $card;                 
         }
@@ -76,14 +76,14 @@ $(function() {
             var column = new Column(name);
             board.addColumn(column);}
     });
-    function initSortable() {       //CAN SORT CARDS IN AND BETWEEN COLUMNS
+    function initSortable() {
         $(".column-card-list").sortable({
             connectWith: ".column-card-list",
             placeholder: "card-placeholder",
             forcePlaceholderSize: true,
         }).disableSelection();
     }
-    function randomString() {       //CREATE RANDOM NUMBER
+    function randomString() {
         var chars = "0123456789abcdefghiklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXTZ";
         var str = "";
         for (var i = 0; i < 10; i++) {
@@ -91,17 +91,14 @@ $(function() {
         }
         return str;
     }
-    // CREATING STARTING COLUMNS
     var tolearnColumn = new Column("To learn");
     var inprogressColumn = new Column("In progress");
     var understoodColumn = new Column("Understood");
 
-    // ADDING COLUMNS TO BOARD
     board.addColumn(tolearnColumn);
     board.addColumn(inprogressColumn);
     board.addColumn(understoodColumn);
 
-    // CREATING STARTING COLUMN CARDS
     var card1 = new Card("HTML");
     var card2 = new Card("CSS");
     var card3 = new Card("JS");
@@ -112,7 +109,6 @@ $(function() {
     var card9 = new Card("NodeJS");
     var card10 = new Card("React");
 
-    // ADDING COLUMN CARDS
     tolearnColumn.addCard(card9);
     tolearnColumn.addCard(card10);
     inprogressColumn.addCard(card3);
@@ -122,5 +118,4 @@ $(function() {
     understoodColumn.addCard(card2);
     understoodColumn.addCard(card7);
     understoodColumn.addCard(card8);
-    // $(".card").hide().slideDown(500);
 });
